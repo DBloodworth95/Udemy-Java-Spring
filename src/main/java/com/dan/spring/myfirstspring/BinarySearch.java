@@ -2,9 +2,14 @@ package com.dan.spring.myfirstspring;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 //Tells spring that this is a bean.
 @Component
+//Scope is used to define whether or not we want to make this class a singleton or a prototype.
+//Prototype means a new instance of this bean is created whenever our application context asks for it.
+@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class BinarySearch {
 
     //Autowriing can be done by name or @Primary.
