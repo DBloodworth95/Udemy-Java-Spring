@@ -1,7 +1,6 @@
-package com.dan.spring.myfirstspring;
+package com.dan.spring.myfirstspring.basicexample;
 
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 //Tells spring that this is a bean.
 @Component

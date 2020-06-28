@@ -1,4 +1,4 @@
-package com.dan.spring.myfirstspring;
+package com.dan.spring.myfirstspring.basicexample;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
