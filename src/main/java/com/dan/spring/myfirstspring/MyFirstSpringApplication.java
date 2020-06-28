@@ -7,7 +7,7 @@ import org.springframework.context.ApplicationContext;
 @SpringBootApplication
 public class MyFirstSpringApplication {
     /*
-    * First steps when it comes to utilizing the Spring Framework:
+    * First steps when it comes to utilizing dependency injection in Spring Framework:
     * 1. What are the beans? (What classes will we be instantiating).
     * 2. What are the dependencies of the bean?
     * 3. Where can we find the beans?

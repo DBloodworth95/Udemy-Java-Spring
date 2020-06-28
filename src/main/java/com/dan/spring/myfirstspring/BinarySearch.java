@@ -1,15 +1,18 @@
 package com.dan.spring.myfirstspring;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 //Tells spring that this is a bean.
 @Component
 public class BinarySearch {
 
-    private final Algorithm algorithm;
+    //Autowriing can be done by name or @Primary.
+    //Because we have a BubbleSortAlgorithm class that impl Algorithm, if we name our Algorithm something like
+    //bubbleSortAlgorithm, Spring will detect this ans use that class as opposed to another that also impl Algorithm.
+    //This replaces @Primary annotation.
+    @Autowired
+    private Algorithm algorithm;
 
-    public BinarySearch(Algorithm algorithm) {
-        this.algorithm = algorithm;
-    }
 
     //Alternatively, you can use setter injection like so
     /*
