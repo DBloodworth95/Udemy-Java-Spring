@@ -1,11 +1,13 @@
 package com.dan.spring.myfirstspring;
 
 import com.dan.spring.myfirstspring.basicexample.BinarySearch;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
-@SpringBootApplication
+@Configuration
+@ComponentScan
 public class BasicExampleMain {
     /*
     * First steps when it comes to utilizing dependency injection in Spring Framework:
@@ -16,11 +18,12 @@ public class BasicExampleMain {
 
     public static void main(String[] args) {
         //Sets the application context (Step 3).
-        ApplicationContext applicationContext = SpringApplication.run(BasicExampleMain.class, args);
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(BasicExampleMain.class);
         //Fetching the bean that we want to use from the ApplicationContext.
         BinarySearch binarySearch = applicationContext.getBean(BinarySearch.class);
         int result = binarySearch.binarySearch(new int[] {12, 10, 3,2},3);
         System.out.println(result);
+        applicationContext.close();
     }
 
 }

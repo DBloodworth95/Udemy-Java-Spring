@@ -8,9 +8,6 @@ import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
-
 //Tells spring that this is a bean.
 @Component
 //Scope is used to define whether or not we want to make this class a singleton or a prototype.
@@ -18,7 +15,7 @@ import javax.annotation.PreDestroy;
 @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
 public class BinarySearch {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
-    //Autowriing can be done by name or @Primary.
+    //Autowiring can be done by name or @Primary.
     //Because we have a BubbleSortAlgorithm class that impl Algorithm, if we name our Algorithm something like
     //bubbleSortAlgorithm, Spring will detect this ans use that class as opposed to another that also impl Algorithm.
     //This replaces @Primary annotation.
@@ -47,6 +44,7 @@ public class BinarySearch {
     //the issue here is that Algorithm has not yet been injected, rather it is injected after the constructor
     //is executed. By using @PostConstruct, we can avoid this issue as it invokes the annotated method directly after
     //the constructor is executed.
+    /*
     @PostConstruct
     public void postConstruct() {
         logger.info("postConstructor called");
@@ -58,4 +56,5 @@ public class BinarySearch {
     public void preDestroy() {
         logger.info("preDestroy called");
     }
+    */
 }
