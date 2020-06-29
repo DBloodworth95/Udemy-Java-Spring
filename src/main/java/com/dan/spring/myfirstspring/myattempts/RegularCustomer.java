@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class RegularCustomer implements Customer {
     @Override
-    public boolean isElderly() {
+    public boolean hasPaid() {
         return false;
     }
 }

@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE, proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class ElderlyCustomer implements Customer {
     @Override
-    public boolean isElderly() {
+    public boolean hasPaid() {
         return false;
     }
 }
