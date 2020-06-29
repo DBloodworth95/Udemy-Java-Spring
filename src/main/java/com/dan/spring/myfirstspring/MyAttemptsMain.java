@@ -16,8 +16,9 @@ public class MyAttemptsMain {
         ApplicationContext applicationContext = SpringApplication.run(MyAttemptsMain.class, args);
         Bus bus = applicationContext.getBean(Bus.class);
         Bus anotherBus = applicationContext.getBean(Bus.class);
-
+        LOGGER.info("{}", bus);
         LOGGER.info("{}", bus.getCustomer());
+        LOGGER.info("{}", anotherBus);
         LOGGER.info("{}",anotherBus.getCustomer());
     }
 }
