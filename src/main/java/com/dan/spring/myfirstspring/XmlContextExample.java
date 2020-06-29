@@ -1,5 +1,6 @@
 package com.dan.spring.myfirstspring;
 
+import com.dan.spring.myfirstspring.xmlexample.XmlHouse;
 import com.dan.spring.myfirstspring.xmlexample.XmlOtherPerson;
 import com.dan.spring.myfirstspring.xmlexample.XmlPerson;
 import org.springframework.beans.factory.annotation.Configurable;
@@ -13,9 +14,12 @@ public class XmlContextExample {
         ClassPathXmlApplicationContext classPathXmlApplicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
         XmlPerson xmlPerson = classPathXmlApplicationContext.getBean(XmlPerson.class);
         XmlOtherPerson xmlOtherPerson = classPathXmlApplicationContext.getBean(XmlOtherPerson.class);
+        XmlHouse xmlHouse = classPathXmlApplicationContext.getBean(XmlHouse.class);
         System.out.println(xmlPerson);
         System.out.println(xmlPerson.getXMLJdbcConnection());
         System.out.println(xmlOtherPerson);
         System.out.println(xmlOtherPerson.getXmlJdbcConnection());
+        System.out.println(xmlHouse);
+        System.out.println(xmlHouse.getXmlDoor());
     }
 }

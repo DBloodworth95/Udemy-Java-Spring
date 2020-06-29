@@ -17,6 +17,14 @@
         <property name="xmlJdbcConnection" ref="xmlJdbcConnection"/>
     </bean>
 
+    <bean id="xmlDoor" class="com.dan.spring.myfirstspring.xmlexample.XmlDoor" scope="prototype">
+
+    </bean>
+
+    <bean id="xmlHouse" class="com.dan.spring.myfirstspring.xmlexample.XmlHouse" scope="prototype">
+        <property name="xmlDoor" ref="xmlDoor"/>
+    </bean>
+
     <!-- more bean definitions go here -->
 
 </beans>
