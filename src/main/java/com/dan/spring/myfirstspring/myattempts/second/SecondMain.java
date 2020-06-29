@@ -10,6 +10,9 @@ public class SecondMain {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(SecondMain.class);
         Car car = applicationContext.getBean(Car.class);
-        Lorry lorry = applicationContext.getBean(Lorry.class);
+        Car car2 = applicationContext.getBean(Car.class);
+        System.out.println(car + " " + car.getEngine());
+        System.out.println(car2 + " " + car2.getEngine());
+        applicationContext.close();
     }
 }
