@@ -9,12 +9,13 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 
 //Tells spring that this is a bean.
 @Component
 //Scope is used to define whether or not we want to make this class a singleton or a prototype.
 //Prototype means a new instance of this bean is created whenever our application context asks for it.
-@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+@Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
 public class BinarySearch {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
     //Autowriing can be done by name or @Primary.
@@ -49,5 +50,12 @@ public class BinarySearch {
     @PostConstruct
     public void postConstruct() {
         logger.info("postConstructor called");
+    }
+    //@PreDestory annotation is used to invoke methods just before the instance of this class is removed from memory.
+    //This is typically used to release resources that it may have been using.
+    //NOTE: Be careful with the scope of the bean as if it's a prototype, this will not work.
+    @PreDestroy
+    public void preDestroy() {
+        logger.info("preDestroy called");
     }
 }
