@@ -1,6 +1,6 @@
 package com.dan.spring.myfirstspring;
 
-import com.dan.spring.myfirstspring.myattempts.Bus;
+import com.dan.spring.myfirstspring.myattempts.third.A;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
@@ -16,11 +16,11 @@ public class MyAttemptsMain {
 
     public static void main(String[] args) {
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(MyAttemptsMain.class);
-        Bus bus = applicationContext.getBean(Bus.class);
-        Bus anotherBus = applicationContext.getBean(Bus.class);
-        LOGGER.info("{}", bus);
-        LOGGER.info("{}", bus.getCustomer());
-        LOGGER.info("{}", anotherBus);
-        LOGGER.info("{}",anotherBus.getCustomer());
+        A a = applicationContext.getBean(A.class);
+        A a2 = applicationContext.getBean(A.class);
+        LOGGER.info("{}", a);
+        LOGGER.info("{}", a2);
+        LOGGER.info("{}", a.getI());
+        LOGGER.info("{}", a2.getI());
     }
 }
