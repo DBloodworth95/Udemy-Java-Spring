@@ -4,12 +4,12 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
-public class DatabaseService {
+public class PropertyService {
 
-    @Value("${external.service.db.url}")
+    @Value("${external.service.another.url}")
     private String url;
 
-    public String returnDbUrl() {
+    public String returnUrl() {
         return url;
     }
 }
